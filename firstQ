@@ -1,0 +1,36 @@
+class Item:
+    def _init_(self, title, author, publicationYear):
+        self.title = title
+        self.author = author
+        self.publicationYear = publicationYear
+
+    def displayDetails(self):
+        print(f"Title: {self.title}")
+        print(f"Author: {self.author}")
+        print(f"Publication Year: {self.publicationYear}")
+
+class Book(Item):
+    def _init_(self, title, author, publicationYear, genre):
+        super()._init_(title, author, publicationYear)
+        self.genre = genre
+
+    def displayDetails(self):
+        super().displayDetails()
+        print(f"Genre: {self.genre}")
+
+class Magazine(Item):
+    def _init_(self, title, author, publicationYear, issueNumber):
+        super()._init_(title, author, publicationYear)
+        self.issueNumber = issueNumber
+
+    def displayDetails(self):
+        super().displayDetails()
+        print(f"Issue Number: {self.issueNumber}")
+
+
+book = Book("The Great Gatsby", "F. Scott Fitzgerald", 1925, "Fiction")
+magazine = Magazine("National Geographic", "Various Authors", 2023, 123)
+
+book.displayDetails()
+print()
+magazine.displayDetails()
